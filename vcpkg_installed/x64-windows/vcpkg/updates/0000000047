@@ -1,0 +1,8 @@
+Package: imgui-sfml
+Version: 2.6
+Depends: imgui, opengl, sfml, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6af6cca16c6a151ff5704f1a1517a592c748aa3f91c5879bfc13f911d10343e7
+Description: ImGui binding for use with SFML
+Status: install ok installed

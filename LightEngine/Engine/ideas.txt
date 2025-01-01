@@ -1,0 +1,296 @@
+
+SERIALIZAZING :
+#include <nlohmann/json.hpp>
+NLOHMANN_DEFINE_TYPE_INTRUSIVE(Person, name, age, height)
+
+
+
+Step 1: Project Setup & Core Engine Architecture
+At the start, focus on setting up the basic structure of the project, defining the primary game loop, and handling window creation.
+
+Tasks:
+Set up your project structure (source files, assets, build system, etc.).
+Create a simple game loop: Initialization, update, render, and clean-up.
+Define core engine classes: Engine, Game, Window, Time, and Input.
+Initialize the window and set up basic event handling (input and window resizing).
+Deliverables:
+A basic project where a window is created, and the engine enters a main loop that updates and renders frames.
+
+
+Step 2: Basic Rendering Pipeline
+Once the project is structured and you have a basic game loop, the next step is to implement the rendering system.
+
+Tasks:
+Set up a renderer class to abstract drawing operations.
+Implement basic 2D rendering: drawing shapes, images, and text.
+Implement a basic sprite system to load and draw textures from files.
+Support frame buffer clearing and basic drawing operations (e.g., drawImage(), drawRect()).
+Deliverables:
+A system capable of drawing basic 2D assets (like sprites and simple shapes) to the screen.
+
+
+Step 3: Scene Management
+The scene management system will allow you to organize your game into separate "scenes," such as menus, levels, and game over screens.
+
+Tasks:
+Create a Scene class to hold game objects, layers, and other scene-specific data.
+Implement a SceneManager to manage switching between scenes.
+Implement scene transitions (e.g., fade in/out, or just instant transitions).
+Introduce a GameObject system that holds entities like characters, enemies, and other interactive objects.
+Deliverables:
+A scene management system that allows you to load, update, and render different game scenes.
+A GameObject class to represent entities in the scene.
+
+
+Step 4: Layering and Z-Ordering
+Games typically require multiple layers of rendering (background, characters, UI, etc.). Handling layering will help control how objects are drawn in the correct order.
+
+Tasks:
+Implement a layer system to manage different object types (e.g., background, entities, UI).
+Introduce Z-ordering: Ensure objects are drawn in the correct order relative to their layer.
+Modify the scene and renderer to support layering (draw the background first, then characters, then UI).
+Deliverables:
+A system that renders objects in multiple layers, ensuring correct depth sorting.
+
+
+Step 5: Input System
+Input handling is crucial for any interactive game. You need to process input from the user and propagate it to the appropriate objects.
+
+Tasks:
+Implement an input system to handle keyboard and mouse input.
+Support for basic input actions (e.g., key presses, mouse clicks, and movement).
+Integrate input handling into the main game loop.
+Optionally, support for custom input bindings (e.g., defining "jump" to a specific key).
+Deliverables:
+A working input system that allows players to interact with the game via keyboard and mouse.
+
+
+Step 6: Sprite System & Animation
+Your game will need an efficient system for displaying and animating characters, objects, and other elements.
+
+Tasks:
+Create a Sprite class to represent a 2D image, including position, rotation, and scaling.
+Implement an Animation system to manage sprite sheets and frame-based animation.
+Allow switching between different animation states (e.g., idle, walk, jump).
+Implement basic sprite batching for efficient rendering (draw multiple sprites in one call).
+Deliverables:
+A sprite system capable of rendering individual images and handling basic sprite animations.
+
+
+Step 7: Tilemap System
+If your game uses grid-based worlds (like platformers or RPGs), you'll need a tilemap system to handle large game worlds efficiently.
+
+Tasks:
+Define a Tile class to represent individual tiles in a tilemap.
+Create a Tilemap class to manage and render a grid of tiles.
+Implement the ability to layer tilemaps (e.g., background, objects, etc.).
+Handle basic tile collisions (optional, if your game needs this functionality).
+Deliverables:
+A tilemap system that renders large levels using a grid of tiles.
+
+
+Step 8: Asset Management & Serialization
+Efficient management and loading of assets (textures, sounds, fonts) is essential for any game. Serialization will help you save and load game data (e.g., saving/loading game states, scene data).
+
+Tasks:
+Implement an AssetManager class to load, store, and manage textures, sounds, and other assets.
+Support for loading and caching assets efficiently to avoid reloading them every frame.
+Implement a basic serialization system (e.g., saving/loading level data, player progress).
+Use file formats like JSON, XML, or binary for storing game data.
+Deliverables:
+A working asset management system that efficiently loads and caches assets.
+A basic serialization system to save and load game state.
+
+
+Step 9: UI System
+Building a UI system is essential for menus, HUDs, and other in-game interfaces. This system allows you to create interactive elements such as buttons, sliders, and text fields.
+
+Tasks:
+Implement a basic UI framework with elements like buttons, labels, and sliders.
+Support for layout management (e.g., absolute positioning, anchors, or grids).
+Handle mouse and keyboard events for UI interactions (e.g., clicking buttons).
+Render the UI on top of the game scene, ensuring correct layering.
+Deliverables:
+A UI system that allows you to create and interact with menus and HUDs.
+
+
+Step 10: Sound and Music System
+Adding sound effects and music is key to making your game more immersive. This step involves setting up an audio system for playback.
+
+Tasks:
+Implement an audio manager to load and play sound effects and background music.
+Support for different sound formats (e.g., WAV, MP3).
+Implement a simple volume control and sound looping.
+Optional: Add spatial audio (3D positioning of sound sources) if your game requires it.
+Deliverables:
+A sound system capable of playing background music and sound effects.
+
+
+Step 11: Physics and Collision Detection
+If your game requires object interaction (e.g., platformers, top-down shooters), you'll need a basic physics and collision system.
+
+Tasks:
+Implement basic 2D collision detection (e.g., AABB, circle collisions).
+Optionally, implement physics for movement (e.g., gravity, velocity).
+Integrate collision detection into the GameObject system (e.g., detect collisions between sprites and tiles).
+Handle collision responses (e.g., bounce, stop, or push objects).
+Deliverables:
+A working collision system with basic physics handling.
+
+
+Step 12: Game Editor (Optional)
+Building a game editor allows you to design levels and tweak game settings without writing code. This step is optional but highly recommended for ease of use.
+
+Tasks:
+Create a GUI for managing scenes, assets, and game objects (e.g., drag-and-drop interface).
+Integrate your editor with the engine so you can manipulate game objects and tilemaps.
+Implement a scene editor that allows you to place and move objects visually.
+Deliverables:
+A basic game editor that allows you to visually design levels, place objects, and edit game scenes.
+
+
+Step 13: Optimization and Refinement
+Once the core features are in place, it’s time to optimize performance and refine the engine.
+
+Tasks:
+Optimize rendering by batching draw calls, reducing state changes, and improving the asset loading system.
+Profile performance and identify bottlenecks (e.g., in the physics system, input handling, or rendering).
+Improve memory management and garbage collection (e.g., object pooling).
+Add features like frame-rate independent movement and resolution scaling.
+Deliverables:
+A polished engine that runs smoothly and is efficient.
+
+
+Step 14: Packaging and Distribution
+Finally, you'll want to package your game engine for use by others or for deployment.
+
+Tasks:
+Create a build system (e.g., CMake) for compiling the engine and games.
+Package the engine with necessary libraries (e.g., asset management, external libraries).
+Ensure cross-platform support (if needed) and build for various operating systems (Windows, macOS, Linux).
+Write documentation on how to use the engine and its features.
+Deliverables:
+A final build of the engine, ready for distribution or further development.
+
+
+
+
+1. Serialization System
+Purpose: Save and load game states, entities, levels, and other configurations.
+Implementation Ideas:
+Use JSON, XML, or binary formats for data persistence.
+Serialize and deserialize game objects, entity properties, scene information, and assets (e.g., textures, sounds).
+Implement versioning for backward compatibility when the game data format evolves.
+Provide a system for saving/loading player progress, configuration settings, and procedural content.
+Optionally include encryption for secure data storage.
+2. GUI Editor
+Purpose: Visual editor to help designers build UI layouts.
+Implementation Ideas:
+WYSIWYG (What You See Is What You Get) editor for drag-and-drop UI components.
+Components like buttons, labels, images, sliders, and input fields.
+Ability to change properties like color, font, position, size, and event bindings.
+Support for event-driven scripting, such as click events or drag actions.
+Support for saving UI layouts as JSON or XML files to be loaded at runtime.
+An automatic layout system (flexbox/grid) for responsive UI design.
+3. Entity Manager
+Purpose: Manage game entities, their components, and interactions.
+Implementation Ideas:
+ECS (Entity-Component-System) design pattern for flexibility and performance.
+Entities can be composed of various components (e.g., Transform, Sprite, Physics, AI).
+Support for entity pooling to optimize performance (i.e., reuse entities rather than constantly creating/destroying them).
+Event system for communication between entities (e.g., trigger events, collisions).
+Hierarchical entities to handle parent-child relationships (for complex objects like characters or vehicles).
+4. Particle System
+Purpose: Create visually interesting effects like explosions, fire, smoke, and rain.
+Implementation Ideas:
+Define particle emitters that spawn particles over time with random or predefined behavior.
+Implement various particle behaviors (e.g., gravity, wind, color fading, size changes).
+Particle pooling for performance optimization (reusing particles instead of creating/destroying them frequently).
+Support for animated sprites or shaders for particle rendering.
+Implement particle systems that can be triggered by events (e.g., character death, explosions).
+5. Movement Strategies
+Purpose: Handle movement logic for characters and objects.
+Implementation Ideas:
+Finite State Machine (FSM) for controlling movement (e.g., idle, walking, running, jumping).
+Implement common movement types like velocity-based movement, acceleration, pathfinding (A*), and custom movement (e.g., gravity, friction).
+Separate movement input handling (keyboard, mouse, gamepad) and movement logic (handling collisions, speed, and physics).
+Movement constraints (e.g., limiting movement to specific axes, preventing movement through walls).
+Camera movement, including smooth following and viewport restrictions.
+6. AI (Artificial Intelligence)
+Purpose: Provide intelligent behaviors for non-playable characters (NPCs).
+Implementation Ideas:
+Finite State Machines (FSMs) for NPC behaviors (patrolling, chasing, fleeing).
+Pathfinding algorithms (e.g., A* or Dijkstra’s) for navigating 2D maps.
+Behavior trees for more complex decision-making (used in strategy or action games).
+Vision and sensing systems (e.g., line-of-sight checks, sound detection).
+Steering behaviors like flocking, seeking, wandering, and avoiding obstacles.
+Implement difficulty scaling based on player progress or other factors.
+7. Scheduler
+Purpose: Manage timed events or tasks (e.g., NPC actions, timed abilities, animations).
+Implementation Ideas:
+Use a global event loop to handle recurring or one-time tasks.
+Allow tasks to be scheduled with specific delays or intervals.
+Manage time-based animations (e.g., transition between character states based on time).
+Event-driven system for managing periodic updates or time-sensitive events.
+Priority system for managing which events are executed first.
+8. Scene Management
+Purpose: Manage levels, environments, and game states.
+Implementation Ideas:
+Define scenes (e.g., main menu, game level, pause screen).
+Scene graph for organizing entities in the scene.
+Support for multiple scene layers (background, foreground, UI).
+Ability to dynamically load and unload scenes to save memory (e.g., level transitions).
+Support for background music, sound effects, and ambient conditions tied to specific scenes.
+Scene transition effects (fade in/out, wipe, zoom, etc.).
+9. Z-Layering / Layer Management
+Purpose: Organize how objects are drawn relative to one another, including layering and depth sorting.
+Implementation Ideas:
+Layer system for handling various types of entities (e.g., background, characters, foreground, UI).
+Sorting mechanism based on entity Z-coordinates or depth (e.g., higher Z means drawn on top).
+Support for both static and dynamic layers (e.g., static background vs. moving characters).
+Option for parallax scrolling (moving different layers at different speeds).
+Dynamic Z-order adjustments based on game state (e.g., enemies moving in front of the player).
+10. Input System
+Purpose: Handle user input from keyboard, mouse, and gamepad.
+Implementation Ideas:
+Map input events to actions (e.g., jump, shoot, open inventory).
+Support for customizable input bindings.
+Input buffering for smooth action transitions (e.g., double-tap to dodge).
+Input event system (e.g., key down, key up, mouse click, mouse movement).
+Support for both touch and mouse input for mobile games.
+11. Sound System
+Purpose: Handle game audio, including background music, sound effects, and voice acting.
+Implementation Ideas:
+Audio playback (stereo/3D sound) for background music and sound effects.
+Background music management (looping, crossfade, volume control).
+Event-based sound effects (e.g., footsteps, gunfire, ambient sounds).
+Support for sound mixing and sound channels (e.g., adjusting the volume of different sound categories).
+Spatial audio (positioned sounds that change based on the listener's position in the game world).
+12. Networking (Optional)
+Purpose: Add multiplayer or online functionality.
+Implementation Ideas:
+Support for basic client-server architecture.
+Syncing of entities and actions between players.
+Lag compensation and prediction techniques for real-time games.
+Matchmaking or lobby systems.
+Cross-platform play (optional).
+13. Scripting and Modding Support
+Purpose: Allow game developers to extend and customize the engine.
+Implementation Ideas:
+Implement a scripting language (e.g., Lua, Python, or custom scripting language) for game logic.
+Expose engine APIs to the scripting system for interacting with game objects, scenes, and events.
+Provide modding support by allowing users to import their own assets, scripts, or even modify core game logic.
+14. Debugging and Profiling Tools
+Purpose: Enhance the development process with debugging and performance analysis tools.
+Implementation Ideas:
+Visual Debugging: Show bounding boxes, paths, AI states, and collision zones.
+Performance Profiling: Track frame rate, memory usage, entity count, and time spent in various subsystems.
+Logging: Implement a robust logging system with different log levels (info, warning, error).
+Hot Reloading: Allow developers to modify assets or scripts in real time without restarting the game.
+15. Customizable Materials / Shaders
+Purpose: Offer graphical effects, special rendering, and customization.
+Implementation Ideas:
+A simple shader language for 2D effects (e.g., lighting, color correction, outline effects).
+Material system that supports sprite-based or tile-based games with texture swapping.
+Post-processing effects (e.g., bloom, blur, pixelation, etc.).
+Dynamic lighting and shadow support.
