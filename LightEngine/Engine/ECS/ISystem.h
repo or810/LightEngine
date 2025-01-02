@@ -1,6 +1,7 @@
 #pragma once
 #include <Engine/ECS/Signature.h>
 #include <functional>
+#include "EntityManager.h"
 
 namespace Light {
 

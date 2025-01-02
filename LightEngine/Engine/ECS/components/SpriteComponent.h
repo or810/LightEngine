@@ -2,10 +2,10 @@
 
 #include "pch.h"
 #include "../ComponentManager.h"
-#include "../data/DeltaTime.h"
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <utility>
+#include <Engine/data/DeltaTime.h>
 
 namespace Light {
 

@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\ECS\ECSCoordinator.h" />
     <ClInclude Include="Engine\data\BinarySearchTree.h" />
     <ClInclude Include="Engine\ECS\ComponentManager.h" />
     <ClInclude Include="Engine\core\Application.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Engine\data\Sequence.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\ECS\ECSCoordinator.cpp" />
     <ClCompile Include="Engine\core\Application.cpp" />
     <ClCompile Include="Engine.h" />
     <ClCompile Include="Engine\core\GameEngine.cpp" />

@@ -7,8 +7,6 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
 #include <SFML/Window/Event.hpp>
-
-
 #include "Engine/data/Sequence.h"
 
 class Game : public Light::GameEngine
@@ -17,18 +15,6 @@ public:
 	Game() {
 		std::cout << "hello" << std::endl;
         
-
-
-       /* Light::BinarySearchTree<int, std::greater<uint32_t>> tree;
-        tree.insert(1, 0);
-        tree.insert(2, 1);
-        tree.insert(3, 20);
-        tree.insert(4, 3);
-        tree.insert(5, 4);
-        std::cout << "Forward Iteration" << std::endl;
-        for (auto it = tree.begin(); it != tree.end(); ++it) {
-            std::cout << *it << std::endl;
-        }*/
 
         Light::PriorityQueue<int> queue;
 
@@ -86,5 +72,7 @@ public:
 private:
 
 };
+
+
 
 KICKOFF(Game)

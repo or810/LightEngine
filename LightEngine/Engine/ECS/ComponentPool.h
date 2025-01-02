@@ -1,5 +1,7 @@
 #pragma once
 
+#include "IComponentPool.h"
+
 namespace Light {
 	/*
 	* Represents a Pool of all the Entitiy's components that are of Type T

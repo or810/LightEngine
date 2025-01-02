@@ -6,7 +6,7 @@
 #include <cassert>
 
 namespace Light {
-#define MAX_ENTITIES 128
+constexpr auto MAX_ENTITIES = 128;
 	using Entity = std::uint32_t;
 	using EntitiesArray = std::array<Entity, MAX_ENTITIES>;
 
@@ -16,7 +16,7 @@ namespace Light {
 	{
 	public:
 		EntityManager() : m_entitiesAlive(0) { m_entities = { {} }; }
-		const Entity CreateEntity();
+		const Entity& CreateEntity();
 		void deleteEntity(Entity entity);
 
 	private:
