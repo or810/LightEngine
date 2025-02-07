@@ -3,7 +3,7 @@ class Scene
 {
 
 private:
-	// camera, layerstack,
+	 //camera, layerstack,
 
 };
 

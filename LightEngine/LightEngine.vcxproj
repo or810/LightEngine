@@ -145,23 +145,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\ECS\ECSCoordinator.h" />
     <ClInclude Include="Engine\data\BinarySearchTree.h" />
-    <ClInclude Include="Engine\ECS\ComponentManager.h" />
     <ClInclude Include="Engine\core\Application.h" />
-    <ClInclude Include="Engine\core\Input.h" />
+    <ClInclude Include="Events\Input.h" />
     <ClInclude Include="Engine\data\DeltaTime.h" />
-    <ClInclude Include="Engine\ECS\ComponentPool.h" />
-    <ClInclude Include="Engine\ECS\ISystem.h" />
-    <ClInclude Include="Engine\ECS\components\PositionComponent.h" />
-    <ClInclude Include="Engine\ECS\components\position\GlobalPositionComponent.h" />
-    <ClInclude Include="Engine\ECS\components\position\RelativePositionComponent.h" />
-    <ClInclude Include="Engine\ECS\components\SpriteComponent.h" />
-    <ClInclude Include="Engine\ECS\IComponentPool.h" />
+    <ClInclude Include="Engine\core\Allocator.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Components\ComponentManager.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Components\ComponentPool.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\ECSCoordinator.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Entities\EntityHandler.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Entities\EntityManager.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Signature.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Systems\ISystem.h" />
+    <ClInclude Include="Engine\EntityComponentSystem\Systems\SystemManager.h" />
     <ClInclude Include="Engine\graphics\Window.h" />
     <ClInclude Include="Engine\scenary\Camera.h" />
     <ClInclude Include="Engine\graphics\Renderer.h" />
-    <ClInclude Include="Engine\ECS\EntityManager.h" />
+    <ClInclude Include="Events\Event.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Engine\core\GameEngine.h" />
     <ClInclude Include="Engine\scenary\Layer.h" />
@@ -174,19 +174,15 @@
     <ClInclude Include="Engine\scenary\SceneManager.h" />
     <ClInclude Include="Engine\scenary\imp\sfml\SFMLCamera.h" />
     <ClInclude Include="Engine\data\Vec2.h" />
-    <ClInclude Include="Engine\ECS\Signature.h" />
-    <ClInclude Include="Engine\ECS\SystemManager.h" />
     <ClInclude Include="Engine\data\Sequence.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\ECS\ECSCoordinator.cpp" />
+    <ClCompile Include="Engine\data\DeltaTime.cpp" />
     <ClCompile Include="Engine\core\Application.cpp" />
     <ClCompile Include="Engine.h" />
     <ClCompile Include="Engine\core\GameEngine.cpp" />
     <ClCompile Include="Engine\core\main.h" />
-    <ClCompile Include="Engine\ECS\components\sprites\SFMLSpriteComponent.h" />
     <ClCompile Include="Engine\scenary\LayerStack.cpp" />
-    <ClCompile Include="Engine\ECS\EntityManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -199,7 +195,6 @@
     <ClCompile Include="Engine\graphics\imp\sfml\SFMLWindow.cpp" />
     <ClCompile Include="Engine\scenary\SceneManager.cpp" />
     <ClCompile Include="Engine\scenary\imp\sfml\SFMLCamera.cpp" />
-    <ClCompile Include="Engine\ECS\SystemManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

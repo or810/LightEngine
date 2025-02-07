@@ -6,12 +6,12 @@
 namespace Light {
 	class SFMLCamera : public Camera
 	{
-	public:
-		SFMLCamera(PositionComponent& position, Rectangle& windowRect);
+	//public:
+	//	SFMLCamera(PositionComponent& position, Rectangle& windowRect);
 
-		sf::View& getView();
-	private:
-		sf::View m_viewport;
+	//	sf::View& getView();
+	//private:
+	//	sf::View m_viewport;
 	};
 
 }

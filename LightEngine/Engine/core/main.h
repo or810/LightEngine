@@ -10,6 +10,5 @@ int main(int argc, char** argv) {
 	std::cout << "starting..." << "\n";
 
 	Light::GameEngine* engine = Light::createApplication();
-	
 	return 1;
 }

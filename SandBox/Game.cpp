@@ -9,22 +9,36 @@
 #include <SFML/Window/Event.hpp>
 #include "Engine/data/Sequence.h"
 
+#include "Engine/EntityComponentSystem/ECSCoordinator.h"
+
+struct Pos {
+    int x, y;
+};
+
 class Game : public Light::GameEngine
 {
 public:
 	Game() {
-		std::cout << "hello" << std::endl;
-        
 
-        Light::PriorityQueue<int> queue;
+        //Light::PriorityQueue<int> queue;
 
-        queue << 3 << 5 << 8 << 10;
+        //queue << 3 << 5 << 8 << 10;
      
-        for (auto it = queue.begin(); it != queue.end(); ++it) {
-            std::cout << *it << std::endl;
-        }
+        //for (auto it = queue.begin(); it != queue.end(); ++it) {
+        //    std::cout << *it << std::endl;
+        //}
 
-
+        
+        Light::ECS::ECSCoordinator* coordinator = new Light::ECS::ECSCoordinator();
+        Pos pos = { 5,2 };
+        std::cout << sizeof(pos);
+        coordinator->registerComponent<Pos>();
+        Light::ECS::Entity entity = coordinator->createEntity();
+        Light::ECS::EntityHandler handler = coordinator->getEntityHandler(entity);
+        handler.addComponent<Pos>(pos);
+        //Pos pos = { 20, 40 };
+        //handler.add(pos);
+        
 
 
 
@@ -45,7 +59,7 @@ public:
                 }
             }
 
-            if (Light::Input::isKeyPressed(Light::Key::A)) {
+            if (Light::Input::isKeyPressed(Light::Events::Key::A)) {
                 std::cout << " A key is pressed! " << std::endl;
             }
 
@@ -62,7 +76,6 @@ public:
             ImGui::SFML::Render(window);
             window.display();
         }
-
         ImGui::SFML::Shutdown();
 	}
 	~Game() {
