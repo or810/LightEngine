@@ -27,5 +27,4 @@ namespace Light {
 	private:
 		float m_seconds;
 	};
-	DeltaTime DeltaTime::zeroDeltaTime = DeltaTime(0.0f);
 }

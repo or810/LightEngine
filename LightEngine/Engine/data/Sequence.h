@@ -4,7 +4,7 @@
 #include <vector>
 #include <optional>
 #include "Engine/data/BinarySearchTree.h"
-#include "Engine/ECS/ISystem.h"
+#include "Engine/EntityComponentSystem/Systems/ISystem.h"
 
 namespace Light {
 

@@ -63,49 +63,46 @@
     <ClInclude Include="Engine\scenary\imp\sfml\SFMLCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\ECS\components\PositionComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\components\position\GlobalPositionComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\data\Vec2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\ECS\components\position\RelativePositionComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\core\Input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\components\SpriteComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\Signature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\EntityManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\ComponentManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\ComponentPool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\ISystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\IComponentPool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\ECS\SystemManager.h">
+    <ClInclude Include="Events\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\data\BinarySearchTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\data\Sequence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\core\Allocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Signature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Components\ComponentPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Components\ComponentManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Entities\EntityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Entities\EntityHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Systems\ISystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\Systems\SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EntityComponentSystem\ECSCoordinator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Events\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -146,13 +143,7 @@
     <ClCompile Include="Engine\scenary\imp\sfml\SFMLCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\ECS\components\sprites\SFMLSpriteComponent.h">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\ECS\EntityManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\ECS\SystemManager.cpp">
+    <ClCompile Include="Engine\data\DeltaTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
